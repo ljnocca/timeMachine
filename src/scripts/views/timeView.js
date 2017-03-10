@@ -16,8 +16,7 @@ var TimeMachine = React.createClass({
 		})
 	},
 	startBackward: function(){
-		this.back = setInterval(this.yearBack, 1000)
-
+		this.back = setInterval(this.yearBack, 500)
 	},
 	yearForward: function(){
 		this.state.yearDisplayed += 1
@@ -26,8 +25,7 @@ var TimeMachine = React.createClass({
 		})
 	},
 	startForward: function(){
-		this.start = setInterval(this.yearForward, 1000)
-
+		this.start = setInterval(this.yearForward, 500)
 	},
 	yearStop: function(){
 		clearInterval(this.start)
@@ -36,13 +34,13 @@ var TimeMachine = React.createClass({
 	render: function(){
 		return(
 			<div className="outterDiv">
-				<h1>The "easy" Time Machine</h1>
+				<h1>Time Machine</h1>
 				<div className="counter">
-					<h1>{this.state.yearDisplayed}</h1>
+					<h1 className='yearText'>{this.state.yearDisplayed}</h1>
 				</div>
-				<button className='back' onClick ={this.startBackward}></button>
-				<button className='stop' onClick = {this.yearStop}></button>
-				<button className ='start' onClick ={this.startForward}></button>
+				<button className='back' onClick ={this.startBackward}>BACK</button>
+				<button className='stop' onClick = {this.yearStop}>STOP</button>
+				<button className ='start' onClick ={this.startForward}>START</button>
 			</div>
 			)
 	}
